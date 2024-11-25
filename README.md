@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Library-Management-System-capstone_project-
 
 <h3> Instructions  </h3>
@@ -16,3 +17,6 @@
 <p><i>- Crispy-forms, widget-tweaks are available and set up</i></p>
 
 <h1>Happy Coding!</h1>
+=======
+# Library_management
+>>>>>>> f2163e5d408db8c4cb7d077120eb436cabcb2a64
