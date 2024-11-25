@@ -1,0 +1,52 @@
+{% extends 'ui/home.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'add_book.css' %}">
+{% load widget_tweaks %}
+{% block title %}
+Add
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px auto;
+            width: 400px;
+        }
+        .image-preview {
+            width: 150px;
+            height: 200px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+        }
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+<body>
+    <form method="post" class="form-container" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Book Entry</h2>
+        {{ form.name| add_class:"form-field" | attr:"placeholder:Enter book name"}}
+        {{ form.author| add_class:"form-field" | attr:"placeholder:Enter  author"}}
+        <label>Genre</label>
+        {{ form.genre| add_class:"form-field" | attr:"placeholder:Enter genre"}}
+        <label>Poster</label>
+        {{ form.poster| add_class:"form-field"}}
+        <label>Description</label>
+        {{ form.description| add_class:"form-field"}}
+
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+
+{% endblock %}
